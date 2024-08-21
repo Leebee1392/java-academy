@@ -1,17 +1,23 @@
 package org.example.models;
 
-import java.util.Date;
-
 public class Role {
-    int id;
-    String roleName;
-    String location;
-    String capability;
-    String band;
-    String closingDate;
-    String status;
+    private int id;
+    private String roleName;
+    private String location;
+    private String capability;
+    private String band;
+    private String closingDate;
+    private String status;
 
-    public Role(int id, String roleName, String location, String capability, String band, String closingDate, String status) {
+    public Role(
+            final int id,
+                final String roleName,
+                final String location,
+                final String capability,
+                final String band,
+                final String closingDate,
+                final String status
+    ) {
         this.id = id;
         this.roleName = roleName;
         this.location = location;
@@ -25,7 +31,7 @@ public class Role {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -33,15 +39,23 @@ public class Role {
         return roleName;
     }
 
-    public void setRoleName(String roleName) {
+    public void setRoleName(final String roleName) {
         this.roleName = roleName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(final String location) {
+        this.location = location;
     }
 
     public String getCapability() {
         return capability;
     }
 
-    public void setCapability(String capability) {
+    public void setCapability(final String capability) {
         this.capability = capability;
     }
 
@@ -49,7 +63,7 @@ public class Role {
         return band;
     }
 
-    public void setBand(String band) {
+    public void setBand(final String band) {
         this.band = band;
     }
 
@@ -57,23 +71,15 @@ public class Role {
         return closingDate;
     }
 
-    public void setClosingDate(String closingDate) {
+    public void setClosingDate(final String closingDate) {
         this.closingDate = closingDate;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(final String status) {
         this.status = status;
     }
 }

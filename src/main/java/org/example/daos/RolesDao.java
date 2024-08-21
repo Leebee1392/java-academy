@@ -11,8 +11,10 @@ import java.util.List;
 
 public class RolesDao {
     public List<Role> getAllRoles() throws SQLException {
-        try(Connection connection = DatabaseConnector.getConnection()) {
-            String query = "SELECT id, roleName, location, capability, band, closingDate, status FROM `role`;";
+        try (Connection connection = DatabaseConnector.getConnection()) {
+            String query = "SELECT id, roleName, location, "
+                    + "capability, band, closingDate, status FROM `role`;";
+            assert connection != null;
             PreparedStatement statement = connection.prepareStatement(query);
 
             ResultSet resultSet = statement.executeQuery();
