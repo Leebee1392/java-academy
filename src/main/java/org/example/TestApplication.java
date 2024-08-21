@@ -6,8 +6,11 @@ import io.dropwizard.setup.Environment;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import org.example.controllers.RolesController;
+import org.example.controllers.TestController;
 import org.example.daos.RolesDao;
+import org.example.daos.TestDao;
 import org.example.services.RolesService;
+import org.example.services.TestService;
 
 public class TestApplication extends Application<TestConfiguration> {
     public static void main(final String[] args) throws Exception {
@@ -30,6 +33,8 @@ public class TestApplication extends Application<TestConfiguration> {
     @Override
     public void run(final TestConfiguration configuration,
                     final Environment environment) {
+        environment.jersey()
+                .register(new TestController(new TestService(new TestDao())));
         environment.jersey()
                 .register(new RolesController(
                         new RolesService((new RolesDao()))));
